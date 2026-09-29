@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Benefícios da alimentação saudável e nutrientes essenciais.">
+  <title>Benefícios | Vida Saudável 💪</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💪</text></svg>">
+</head>
+<body>
+  <div id="progress-leitura" aria-hidden="true"></div>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+  <div class="barra-acessibilidade py-1" role="region" aria-label="Barra de acessibilidade">
+    <div class="container d-flex flex-wrap align-items-center gap-1">
+      <span class="me-2"><i class="bi bi-universal-access" aria-hidden="true"></i> Acessibilidade:</span>
+      <button type="button" onclick="diminuirFonte()" aria-label="Diminuir fonte">A-</button>
+      <button type="button" onclick="aumentarFonte()" aria-label="Aumentar fonte">A+</button>
+      <button type="button" onclick="resetarFonte()" aria-label="Fonte padrão">A</button>
+      <button type="button" data-contraste-btn onclick="alternarContraste()" aria-pressed="false">Contraste</button>
+      <button type="button" data-tema-btn onclick="alternarTema()" aria-pressed="false"><i class="bi bi-moon-fill" aria-hidden="true"></i> Escuro</button>
+      <button type="button" id="btn-ler" aria-label="Ouvir conteúdo da página em voz alta">Ouvir</button>
+      <button type="button" id="btn-parar-leitura" aria-label="Parar leitura em voz alta">Parar</button>
+      <span id="aviso-acessibilidade" role="status" aria-live="polite"></span>
+    </div>
+  </div>
+  <header role="banner" class="sticky-top">
+    <nav class="navbar navbar-expand-lg" aria-label="Navegação principal">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><span class="logo-badge" aria-hidden="true">🥗</span> Vida Saudável</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu"><span class="navbar-toggler-icon" aria-hidden="true"></span></button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="beneficios.html">Benefícios</a></li>
+            <li class="nav-item"><a class="nav-link" href="receitas.html">Receitas</a></li>
+            <li class="nav-item"><a class="nav-link" href="dicas.html">Dicas</a></li>
+            <li class="nav-item"><a class="nav-link" href="midia.html">Vídeos</a></li>
+            <li class="nav-item ms-lg-2"><a class="btn btn-success btn-sm" href="contato.html"><i class="bi bi-chat-heart" aria-hidden="true"></i> Contato</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main id="conteudo" tabindex="-1" class="container my-5">
+    <div class="titulo-secao reveal">
+      <span class="kicker">Corpo & mente</span>
+      <h1>Benefícios da alimentação saudável</h1>
+      <p class="lead">Comer bem fortalece a imunidade, melhora o humor, previne doenças e aumenta a longevidade.</p>
+    </div>
+
+    <div class="row g-4 my-3 align-items-stretch">
+      <div class="col-md-6 reveal"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80&auto=format&fit=crop" alt="Prato saudável com vegetais coloridos" class="img-fluid rounded-4 shadow h-100" style="object-fit:cover;min-height:320px" width="800" height="600" fetchpriority="high"></div>
+      <div class="col-md-6 reveal">
+        <h2 class="h4"><span aria-hidden="true">⚡</span> O que acontece no seu corpo?</h2>
+        <div class="d-grid gap-2 mt-3">
+          <div class="card p-3 d-flex flex-row gap-3 align-items-start"><span class="card-icone mb-0" style="background:#fee2e2" aria-hidden="true">❤️</span><div><strong>Coração:</strong> menos gordura saturada = menos colesterol e pressão controlada.</div></div>
+          <div class="card p-3 d-flex flex-row gap-3 align-items-start"><span class="card-icone mb-0" style="background:#e0f2fe" aria-hidden="true">🧠</span><div><strong>Cérebro:</strong> ômega-3 e vitaminas do complexo B melhoram memória e foco.</div></div>
+          <div class="card p-3 d-flex flex-row gap-3 align-items-start"><span class="card-icone mb-0" style="background:#dcfce7" aria-hidden="true">🌿</span><div><strong>Intestino:</strong> fibras regulam a digestão e alimentam a microbiota.</div></div>
+          <div class="card p-3 d-flex flex-row gap-3 align-items-start"><span class="card-icone mb-0" style="background:#fef9c3" aria-hidden="true">✨</span><div><strong>Pele e cabelo:</strong> vitaminas C, E e zinco deixam tudo mais saudável.</div></div>
+          <div class="card p-3 d-flex flex-row gap-3 align-items-start"><span class="card-icone mb-0" style="background:#f3e8ff" aria-hidden="true">😊</span><div><strong>Humor:</strong> triptofano (banana, aveia) ajuda na produção de serotonina.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="mt-5 reveal"><span aria-hidden="true">📊</span> Tabela de nutrientes essenciais</h2>
+    <div class="table-responsive reveal">
+      <table class="table table-striped table-bordered align-middle shadow-sm">
+        <caption>Tabela com nutrientes, funções e onde encontrar</caption>
+        <thead><tr><th scope="col">Nutriente</th><th scope="col">Função</th><th scope="col">Fontes <span aria-hidden="true">🛒</span></th></tr></thead>
+        <tbody>
+          <tr><th scope="row"><span aria-hidden="true">🥚</span> Proteínas</th><td>Construção muscular</td><td>Ovos, frango, feijão, lentilha</td></tr>
+          <tr><th scope="row"><span aria-hidden="true">🌾</span> Carboidratos integrais</th><td>Energia duradoura</td><td>Aveia, arroz integral, batata-doce</td></tr>
+          <tr><th scope="row"><span aria-hidden="true">🥑</span> Gorduras boas</th><td>Saúde cerebral</td><td>Azeite, abacate, castanhas</td></tr>
+          <tr><th scope="row"><span aria-hidden="true">🍊</span> Vitamina C</th><td>Imunidade</td><td>Laranja, acerola, kiwi</td></tr>
+          <tr><th scope="row"><span aria-hidden="true">🦴</span> Cálcio + Vit. D</th><td>Ossos fortes</td><td>Leite, brócolis, sol <span aria-hidden="true">☀️</span></td></tr>
+          <tr><th scope="row"><span aria-hidden="true">🩸</span> Ferro</th><td>Previne anemia</td><td>Feijão, espinafre + vitamina C</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="row g-4 mt-4">
+      <div class="col-lg-7 reveal">
+        <h2><span aria-hidden="true">🔺</span> Pirâmide alimentar simplificada</h2>
+        <ol class="list-group list-group-numbered shadow-sm mt-3">
+          <li class="list-group-item"><strong>Base:</strong> água, atividade física, cereais integrais</li>
+          <li class="list-group-item"><strong>Meio:</strong> frutas, verduras e legumes (5 porções/dia)</li>
+          <li class="list-group-item"><strong>Topo:</strong> proteínas e gorduras boas com moderação</li>
+          <li class="list-group-item"><strong>Evitar:</strong> refrigerantes, salgadinhos, embutidos e doces em excesso</li>
+        </ol>
+        <p class="mt-4"><a href="receitas.html" class="btn btn-success">Ver receitas saudáveis <span aria-hidden="true">🍳</span></a> <a href="dicas.html" class="btn btn-outline-success">Ver dicas práticas</a></p>
+      </div>
+      <div class="col-lg-5 reveal">
+        <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&q=80&auto=format&fit=crop" alt="Salada fresca com folhas, tomate e pepino" class="img-fluid rounded-4 shadow" width="700" height="500" loading="lazy">
+        <div class="newsletter-box p-3 mt-3">
+          <strong><span aria-hidden="true">💡</span> Você sabia?</strong> Quem come 5 porções de frutas e verduras por dia tem até <strong>30% menos risco</strong> de doenças crônicas.
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="pt-5 pb-3">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-5"><h2 class="h5"><span class="logo-badge" aria-hidden="true">🥗</span> Vida Saudável</h2><p>Projeto educacional sobre alimentação saudável.</p></div>
+        <div class="col-md-4"><h3 class="h6 text-uppercase">Explorar</h3>
+          <nav aria-label="Links do rodapé"><ul class="list-unstyled d-grid gap-1"><li><a href="index.html"><span aria-hidden="true">🏠</span> Início</a></li><li><a href="beneficios.html"><span aria-hidden="true">💪</span> Benefícios</a></li><li><a href="receitas.html"><span aria-hidden="true">🍳</span> Receitas</a></li><li><a href="dicas.html"><span aria-hidden="true">💡</span> Dicas</a></li><li><a href="midia.html"><span aria-hidden="true">🎬</span> Vídeos</a></li><li><a href="contato.html"><span aria-hidden="true">✉️</span> Contato</a></li></ul></nav></div>
+        <div class="col-md-3"><h3 class="h6 text-uppercase">Newsletter</h3>
+          <form class="form-news d-flex gap-2" aria-label="Assinar newsletter"><label class="visually-hidden" for="n1">E-mail</label><input id="n1" name="newsletter-email" type="email" class="form-control" placeholder="voce@email.com" required autocomplete="email"><button class="btn btn-warning" type="submit">OK</button></form></div>
+      </div>
+      <div class="footer-bottom mt-4 pt-3 small text-center">© <span data-ano>2026</span> Vida Saudável • <a href="index.html">Início</a> | <a href="contato.html">Contato</a></div>
+    </div>
+  </footer>
+  <button type="button" id="btn-topo" aria-label="Voltar ao topo"><span aria-hidden="true">↑</span></button>
+  <div vw class="enabled"><div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div></div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script><script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
