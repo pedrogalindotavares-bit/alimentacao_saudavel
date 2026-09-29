@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Site sobre Alimentação Saudável: benefícios, receitas, dicas, vídeos e áudios com acessibilidade.">
+  <title>Início | Vida Saudável 🥗</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥗</text></svg>">
+</head>
+<body>
+  <div id="progress-leitura" aria-hidden="true"></div>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <div class="barra-acessibilidade py-1" role="region" aria-label="Barra de acessibilidade">
+    <div class="container d-flex flex-wrap align-items-center gap-1">
+      <span class="me-2"><i class="bi bi-universal-access" aria-hidden="true"></i> Acessibilidade:</span>
+      <button type="button" onclick="diminuirFonte()" aria-label="Diminuir tamanho da fonte">A-</button>
+      <button type="button" onclick="aumentarFonte()" aria-label="Aumentar tamanho da fonte">A+</button>
+      <button type="button" onclick="resetarFonte()" aria-label="Restaurar tamanho padrão da fonte">A</button>
+      <button type="button" data-contraste-btn onclick="alternarContraste()" aria-pressed="false"><i class="bi bi-contrast" aria-hidden="true"></i> Contraste</button>
+      <button type="button" data-tema-btn onclick="alternarTema()" aria-pressed="false"><i class="bi bi-moon-fill" aria-hidden="true"></i> Escuro</button>
+      <button type="button" id="btn-ler" aria-label="Ouvir conteúdo da página em voz alta"><i class="bi bi-volume-up" aria-hidden="true"></i> Ouvir</button>
+      <button type="button" id="btn-parar-leitura" aria-label="Parar leitura em voz alta"><i class="bi bi-stop-circle" aria-hidden="true"></i> Parar</button>
+      <span id="aviso-acessibilidade" class="ms-2" role="status" aria-live="polite"></span>
+    </div>
+  </div>
+
+  <header role="banner" class="sticky-top">
+    <nav class="navbar navbar-expand-lg" aria-label="Navegação principal">
+      <div class="container">
+        <a class="navbar-brand" href="index.html"><span class="logo-badge" aria-hidden="true">🥗</span> Vida Saudável</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu de navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="beneficios.html">Benefícios</a></li>
+            <li class="nav-item"><a class="nav-link" href="receitas.html">Receitas</a></li>
+            <li class="nav-item"><a class="nav-link" href="dicas.html">Dicas</a></li>
+            <li class="nav-item"><a class="nav-link" href="midia.html">Vídeos</a></li>
+            <li class="nav-item ms-lg-2"><a class="btn btn-success btn-sm" href="contato.html"><i class="bi bi-chat-heart" aria-hidden="true"></i> Contato</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo" tabindex="-1">
+    <!-- HERO -->
+    <section class="hero p-4 p-md-5" aria-labelledby="titulo-hero">
+      <div class="container py-4">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-6">
+            <span class="badge-hero"><span aria-hidden="true">✨</span> Novo • Guia 2026 de alimentação equilibrada</span>
+            <h1 id="titulo-hero" class="mt-3">Comer bem é o seu <span>superpoder</span> diário</h1>
+            <p class="lead mt-3">Descubra receitas de 15 minutos, dicas práticas e vídeos acessíveis para transformar sua energia — sem dieta maluca e sem gastar muito.</p>
+            <div class="d-flex flex-wrap gap-2 mt-4">
+              <a href="receitas.html" class="btn btn-warning btn-lg"><i class="bi bi-egg-fried" aria-hidden="true"></i> Ver receitas</a>
+              <a href="midia.html" class="btn btn-light btn-lg"><i class="bi bi-play-circle" aria-hidden="true"></i> Assistir vídeos</a>
+            </div>
+            <div class="d-flex gap-4 mt-4 small">
+              <span><span aria-hidden="true">⭐</span> 4.9 · 2.300 avaliações</span>
+              <span><span aria-hidden="true">👥</span> 50 mil leitores/mês</span>
+            </div>
+          </div>
+          <div class="col-lg-6 text-center">
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80&auto=format&fit=crop" alt="Prato colorido com salada, legumes, grãos e folhas verdes" class="img-fluid hero-img" width="560" height="420" fetchpriority="high">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PILARES -->
+    <section class="container my-5" aria-labelledby="tit-pilares">
+      <div class="titulo-secao reveal">
+        <span class="kicker">Comece por aqui</span>
+        <h2 id="tit-pilares">Os 3 pilares da alimentação saudável</h2>
+        <p>Simples, barato e gostoso. Domine esses três e o resto flui naturalmente.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4 reveal">
+          <article class="card card-alimento h-100" aria-labelledby="c1">
+            <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=600&q=80&auto=format&fit=crop" class="card-img-top" alt="Legumes e verduras frescas variadas" loading="lazy" width="600" height="400">
+            <div class="card-body">
+              <span class="card-icone" style="background:#dcfce7" aria-hidden="true">🥦</span>
+              <h3 id="c1" class="h5">1. Comida de verdade</h3>
+              <p>Prefira alimentos in natura: frutas, verduras, grãos integrais, ovos e castanhas. Descasque mais, desembale menos.</p>
+              <a href="beneficios.html" class="btn btn-success">Saiba mais <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-4 reveal">
+          <article class="card card-alimento h-100" aria-labelledby="c2">
+            <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=600&q=80&auto=format&fit=crop" class="card-img-top" alt="Copos com sucos naturais e frutas" loading="lazy" width="600" height="400">
+            <div class="card-body">
+              <span class="card-icone" style="background:#e0f2fe" aria-hidden="true">💧</span>
+              <h3 id="c2" class="h5">2. Hidratação inteligente</h3>
+              <p>2 litros de água por dia melhoram digestão, pele e foco. Sucos naturais sem açúcar são aliados.</p>
+              <a href="dicas.html" class="btn btn-success">Ver dicas <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+        </div>
+        <div class="col-md-4 reveal">
+          <article class="card card-alimento h-100" aria-labelledby="c3">
+            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80&auto=format&fit=crop" class="card-img-top" alt="Mesa com refeição saudável equilibrada" loading="lazy" width="600" height="400">
+            <div class="card-body">
+              <span class="card-icone" style="background:#fef9c3" aria-hidden="true">⚖️</span>
+              <h3 id="c3" class="h5">3. Equilíbrio no prato</h3>
+              <p>Regra de ouro: ½ verduras + ¼ proteína + ¼ carboidrato integral + azeite. Sem terrorismo nutricional.</p>
+              <a href="midia.html" class="btn btn-success">Assistir vídeos <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="py-5 bg-light" aria-labelledby="tit-numeros">
+      <div class="container text-center">
+        <div class="titulo-secao reveal">
+          <span class="kicker">Baseado em ciência</span>
+          <h2 id="tit-numeros">Por que comer saudável?</h2>
+          <p>Segundo a OMS, uma dieta equilibrada pode prevenir 80% das doenças cardíacas e 30% dos cânceres.</p>
+        </div>
+        <div class="row g-3 mt-2" role="list" aria-label="Benefícios em números">
+          <div class="col-6 col-md-3 reveal" role="listitem"><div class="stat-card"><div class="stat-num" data-contar="30" data-sufixo="%" aria-label="30 por cento">0%</div><p class="mb-0 fw-semibold">mais energia</p></div></div>
+          <div class="col-6 col-md-3 reveal" role="listitem"><div class="stat-card"><div class="stat-num" data-contar="25" data-sufixo="%" aria-label="25 por cento">0%</div><p class="mb-0 fw-semibold">menos risco de obesidade</p></div></div>
+          <div class="col-6 col-md-3 reveal" role="listitem"><div class="stat-card"><div class="stat-num" data-contar="5" data-sufixo="" aria-label="5">0</div><p class="mb-0 fw-semibold">porções de frutas/dia</p></div></div>
+          <div class="col-6 col-md-3 reveal" role="listitem"><div class="stat-card"><div class="stat-num" data-contar="2" data-sufixo="L" aria-label="2 litros">0L</div><p class="mb-0 fw-semibold">água recomendada</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO MONTAR O PRATO -->
+    <section class="container my-5" aria-labelledby="tit-prato">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6 reveal">
+          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80&auto=format&fit=crop" alt="Bowl nutritivo com legumes coloridos" class="img-fluid rounded-4 shadow" loading="lazy" width="800" height="600">
+        </div>
+        <div class="col-lg-6 reveal">
+          <span class="kicker">Método do prato</span>
+          <h2 id="tit-prato">Monte o prato ideal em 30 segundos</h2>
+          <div class="d-flex gap-3 mt-4">
+            <span class="passo-num" aria-hidden="true">½</span>
+            <div><strong>Metade verduras e legumes</strong><p class="mb-0">Quanto mais cor, mais vitaminas. Folhas, tomate, cenoura, brócolis…</p></div>
+          </div>
+          <div class="d-flex gap-3 mt-3">
+            <span class="passo-num" aria-hidden="true">¼</span>
+            <div><strong>Um quarto de proteína</strong><p class="mb-0">Ovos, frango, peixe, feijão, lentilha ou tofu.</p></div>
+          </div>
+          <div class="d-flex gap-3 mt-3">
+            <span class="passo-num" aria-hidden="true">¼</span>
+            <div><strong>Um quarto de carboidrato bom</strong><p class="mb-0">Arroz integral, batata-doce, mandioca ou aveia + fio de azeite.</p></div>
+          </div>
+          <a href="dicas.html" class="btn btn-outline-success mt-4">Calcular meu IMC <i class="bi bi-calculator" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="container my-5" aria-labelledby="tit-depo">
+      <div class="titulo-secao reveal">
+        <span class="kicker">Quem já mudou</span>
+        <h2 id="tit-depo">Histórias reais <span aria-hidden="true">💚</span></h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4 reveal"><figure class="card p-4 depo h-100 mb-0"><blockquote><p>“Troquei o refrigerante por água com limão e perdi 6kg em 4 meses sem sofrer. As receitas daqui salvaram minha rotina!”</p></blockquote><figcaption class="d-flex align-items-center gap-2 mt-3"><span class="avatar" style="background:#14532d" aria-hidden="true">M</span><div><strong>Mariana, 29</strong><br><small><span aria-label="5 de 5 estrelas">⭐⭐⭐⭐⭐</span> · Segue há 1 ano</small></div></figcaption></figure></div>
+        <div class="col-md-4 reveal"><figure class="card p-4 depo h-100 mb-0"><blockquote><p>“O quiz e a calculadora de IMC me abriram os olhos. Hoje cozinho 4x por semana e minha energia dobrou.”</p></blockquote><figcaption class="d-flex align-items-center gap-2 mt-3"><span class="avatar" style="background:#92400e" aria-hidden="true">C</span><div><strong>Carlos, 41</strong><br><small><span aria-label="5 de 5 estrelas">⭐⭐⭐⭐⭐</span> · Segue há 6 meses</small></div></figcaption></figure></div>
+        <div class="col-md-4 reveal"><figure class="card p-4 depo h-100 mb-0"><blockquote><p>“Uso o modo leitura em voz alta com minha mãe idosa. Acessibilidade nota 10 e conteúdo direto ao ponto.”</p></blockquote><figcaption class="d-flex align-items-center gap-2 mt-3"><span class="avatar" style="background:#0c4a6e" aria-hidden="true">A</span><div><strong>Ana, 35</strong><br><small><span aria-label="5 de 5 estrelas">⭐⭐⭐⭐⭐</span> · Segue há 2 anos</small></div></figcaption></figure></div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="container my-5 reveal" aria-labelledby="tit-news">
+      <div class="newsletter-box p-4 p-md-5 d-flex flex-wrap align-items-center gap-4">
+        <div class="flex-grow-1" style="min-width:260px">
+          <h2 id="tit-news" class="h3"><span aria-hidden="true">📬</span> Receba 1 receita saudável por semana</h2>
+          <p class="mb-0">Grátis, sem spam. Só comida boa + dica de feira barata.</p>
+        </div>
+        <form class="form-news d-flex gap-2 flex-grow-1" style="min-width:260px" aria-label="Assinar newsletter">
+          <label class="visually-hidden" for="email-news">Seu e-mail</label>
+          <input id="email-news" name="email-news" type="email" class="form-control" placeholder="voce@email.com" required autocomplete="email">
+          <button class="btn btn-success text-nowrap" type="submit">Assinar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pt-5 pb-3">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-5">
+          <h2 class="h5"><span class="logo-badge" aria-hidden="true">🥗</span> Vida Saudável</h2>
+          <p>Projeto educacional sobre alimentação saudável.<br>Inclusão: LIBRAS <span aria-hidden="true">👐</span>, contraste, voz <span aria-hidden="true">🔊</span> e fonte ajustável.</p>
+          <div class="d-flex gap-2">
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram do Vida Saudável (abre em nova aba)" class="btn btn-sm btn-light"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube do Vida Saudável (abre em nova aba)" class="btn btn-sm btn-light"><i class="bi bi-youtube" aria-hidden="true"></i></a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok do Vida Saudável (abre em nova aba)" class="btn btn-sm btn-light"><i class="bi bi-tiktok" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h3 class="h6 text-uppercase">Explorar</h3>
+          <nav aria-label="Links do rodapé">
+            <ul class="list-unstyled d-grid gap-1">
+              <li><a href="index.html"><span aria-hidden="true">🏠</span> Início</a></li>
+              <li><a href="beneficios.html"><span aria-hidden="true">💪</span> Benefícios</a></li>
+              <li><a href="receitas.html"><span aria-hidden="true">🍳</span> Receitas</a></li>
+              <li><a href="dicas.html"><span aria-hidden="true">💡</span> Dicas + IMC</a></li>
+              <li><a href="midia.html"><span aria-hidden="true">🎬</span> Vídeos e Áudios</a></li>
+              <li><a href="contato.html"><span aria-hidden="true">✉️</span> Contato</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col-md-3">
+          <h3 class="h6 text-uppercase">Dica do dia</h3>
+          <p class="small"><span aria-hidden="true">🥤</span> Troque 1 copo de refrigerante por água com gás + limão. São <strong>-140 kcal</strong> por dia sem esforço!</p>
+          <a href="dicas.html" class="btn btn-warning btn-sm">Quero mais dicas</a>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex flex-wrap justify-content-between gap-2 mt-4 pt-3 small">
+        <span>© <span data-ano>2026</span> Vida Saudável • Feito com HTML, CSS, JS e Bootstrap</span>
+        <span><a href="contato.html">Acessibilidade</a> · <a href="contato.html">Privacidade</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" id="btn-topo" aria-label="Voltar ao topo"><span aria-hidden="true">↑</span></button>
+
+  <div vw class="enabled"><div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div></div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
