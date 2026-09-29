@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Entre em contato, tire dúvidas sobre alimentação saudável.">
+  <title>Contato | Vida Saudável ✉️</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✉️</text></svg>">
+</head>
+<body>
+  <div id="progress-leitura" aria-hidden="true"></div>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+  <div class="barra-acessibilidade py-1" role="region" aria-label="Barra de acessibilidade"><div class="container d-flex flex-wrap gap-1 align-items-center"><span class="me-2"><i class="bi bi-universal-access" aria-hidden="true"></i> Acessibilidade:</span><button type="button" onclick="diminuirFonte()" aria-label="Diminuir fonte">A-</button><button type="button" onclick="aumentarFonte()" aria-label="Aumentar fonte">A+</button><button type="button" onclick="resetarFonte()" aria-label="Fonte padrão">A</button><button type="button" data-contraste-btn onclick="alternarContraste()" aria-pressed="false">Contraste</button><button type="button" data-tema-btn onclick="alternarTema()" aria-pressed="false"><i class="bi bi-moon-fill" aria-hidden="true"></i> Escuro</button><button type="button" id="btn-ler" aria-label="Ouvir conteúdo da página em voz alta">Ouvir</button><button type="button" id="btn-parar-leitura" aria-label="Parar leitura em voz alta">Parar</button><span id="aviso-acessibilidade" role="status" aria-live="polite"></span></div></div>
+  <header role="banner" class="sticky-top"><nav class="navbar navbar-expand-lg" aria-label="Navegação principal"><div class="container"><a class="navbar-brand" href="index.html"><span class="logo-badge" aria-hidden="true">🥗</span> Vida Saudável</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu"><span class="navbar-toggler-icon" aria-hidden="true"></span></button><div class="collapse navbar-collapse" id="menu"><ul class="navbar-nav ms-auto align-items-lg-center"><li class="nav-item"><a class="nav-link" href="index.html">Início</a></li><li class="nav-item"><a class="nav-link" href="beneficios.html">Benefícios</a></li><li class="nav-item"><a class="nav-link" href="receitas.html">Receitas</a></li><li class="nav-item"><a class="nav-link" href="dicas.html">Dicas</a></li><li class="nav-item"><a class="nav-link" href="midia.html">Vídeos</a></li><li class="nav-item ms-lg-2"><a class="btn btn-success btn-sm" href="contato.html"><i class="bi bi-chat-heart" aria-hidden="true"></i> Contato</a></li></ul></div></div></nav></header>
+  <main id="conteudo" tabindex="-1" class="container my-5">
+    <div class="titulo-secao reveal">
+      <span class="kicker">Resposta em até 24h <span aria-hidden="true">💬</span></span>
+      <h1>Fale conosco <span aria-hidden="true">✉️</span></h1>
+      <p class="lead">Dúvidas, sugestões de receitas ou parcerias? Preencha o formulário acessível abaixo.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 reveal">
+        <form id="form-contato" class="card p-4 shadow-sm" novalidate aria-labelledby="tit-form">
+          <h2 id="tit-form" class="h5"><span aria-hidden="true">📝</span> Formulário de contato</h2>
+          <p id="msg-erro" class="text-danger fw-bold" role="alert"></p>
+          <p id="msg-sucesso" class="text-success fw-bold" tabindex="-1" role="status" aria-live="polite"></p>
+          <div class="mb-3"><label for="nome" class="form-label">Nome completo *</label><input id="nome" name="nome" class="form-control" required autocomplete="name" placeholder="Seu nome"><div class="invalid-feedback">Informe seu nome.</div></div>
+          <div class="mb-3"><label for="email" class="form-label">E-mail *</label><input id="email" name="email" type="email" class="form-control" required autocomplete="email" placeholder="voce@email.com" aria-describedby="ajuda-email"><small id="ajuda-email">Ex: voce@email.com — nunca compartilhamos seu e-mail.</small><div class="invalid-feedback">Informe um e-mail válido.</div></div>
+          <div class="mb-3"><label for="assunto" class="form-label">Assunto *</label><select id="assunto" name="assunto" class="form-select" required><option value="">Escolha…</option><option>Dúvida nutricional</option><option>Sugerir receita</option><option>Acessibilidade</option><option>Parceria</option><option>Outro</option></select><div class="invalid-feedback">Escolha um assunto.</div></div>
+          <div class="mb-3"><label for="mensagem" class="form-label">Mensagem *</label><textarea id="mensagem" name="mensagem" rows="4" maxlength="500" class="form-control" required placeholder="Como podemos ajudar?" aria-describedby="cont-msg"></textarea><small id="cont-msg">0/500 caracteres</small><div class="invalid-feedback">Escreva sua mensagem.</div></div>
+          <button type="submit" class="btn btn-success w-100"><i class="bi bi-send" aria-hidden="true"></i> Enviar mensagem</button>
+        </form>
+      </div>
+      <div class="col-md-6 reveal">
+        <h2 class="h5"><span aria-hidden="true">❓</span> Perguntas frequentes</h2>
+        <div class="accordion shadow-sm" id="faq">
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#f1" aria-expanded="true" aria-controls="f1"><span aria-hidden="true">💰</span> Comer saudável é caro?</button></h3><div id="f1" class="accordion-collapse collapse show" data-bs-parent="#faq"><div class="accordion-body">Não! Feiras, ovos, arroz, feijão e frutas da estação são baratos e nutritivos. Comer da estação economiza até 40%.</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f2" aria-expanded="false" aria-controls="f2"><span aria-hidden="true">🍽️</span> Quantas refeições por dia?</button></h3><div id="f2" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Depende da rotina. O importante é equilíbrio e não pular café da manhã, almoço e jantar. Lanches com frutas ajudam entre refeições.</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f3" aria-expanded="false" aria-controls="f3"><span aria-hidden="true">♿</span> Este site é acessível?</button></h3><div id="f3" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Sim: contraste, modo escuro, fonte ajustável, ARIA, LIBRAS, navegação por teclado, legendas e transcrições.</div></div></div>
+          <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f4" aria-expanded="false" aria-controls="f4"><span aria-hidden="true">📬</span> Vocês têm newsletter?</button></h3><div id="f4" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Sim! 1 receita por semana, grátis. Assine no rodapé de qualquer página.</div></div></div>
+        </div>
+        <div class="card p-4 mt-4">
+          <h2 class="h5"><span aria-hidden="true">📍</span> Onde estamos</h2>
+          <address class="mb-2">Projeto Vida Saudável<br>E-mail: <a href="mailto:contato@vidasauavel.com">contato@vidasauavel.com</a><br>Tel: <a href="tel:+5500000000000">(00) 00000-0000</a><br><small>Seg–Sex, 9h às 18h</small></address>
+          <img src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=600&q=80&auto=format&fit=crop" alt="Cesta com frutas frescas e coloridas" class="img-fluid rounded-4" loading="lazy" width="600" height="450">
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="pt-5 pb-3"><div class="container"><div class="row g-4"><div class="col-md-5"><h2 class="h5"><span class="logo-badge" aria-hidden="true">🥗</span> Vida Saudável</h2><p>Respondemos rapidinho. Prometo! <span aria-hidden="true">💚</span></p></div><div class="col-md-4"><h3 class="h6 text-uppercase">Explorar</h3><nav aria-label="Links do rodapé"><ul class="list-unstyled d-grid gap-1"><li><a href="index.html"><span aria-hidden="true">🏠</span> Início</a></li><li><a href="beneficios.html"><span aria-hidden="true">💪</span> Benefícios</a></li><li><a href="receitas.html"><span aria-hidden="true">🍳</span> Receitas</a></li><li><a href="dicas.html"><span aria-hidden="true">💡</span> Dicas</a></li><li><a href="midia.html"><span aria-hidden="true">🎬</span> Vídeos</a></li><li><a href="contato.html"><span aria-hidden="true">✉️</span> Contato</a></li></ul></nav></div><div class="col-md-3"><h3 class="h6 text-uppercase">Newsletter</h3><form class="form-news d-flex gap-2" aria-label="Assinar newsletter"><label class="visually-hidden" for="n5">E-mail</label><input id="n5" name="newsletter-email" type="email" class="form-control" placeholder="voce@email.com" required autocomplete="email"><button class="btn btn-warning" type="submit">OK</button></form></div></div><div class="footer-bottom mt-4 pt-3 small text-center">© <span data-ano>2026</span> Vida Saudável • <a href="index.html">Início</a></div></div></footer>
+  <button type="button" id="btn-topo" aria-label="Voltar ao topo"><span aria-hidden="true">↑</span></button>
+  <div vw class="enabled"><div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div></div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script><script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="js/script.js"></script>
+</body>
+</html>
